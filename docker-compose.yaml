@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+
+  ipam:
+    depends_on:
+      - db
+    image: pierrecdn/phpipam:latest
+    environment:
+      - MYSQL_ENV_MYSQL_USER=root
+      - MYSQL_ENV_MYSQL_ROOT_PASSWORD=p4ssw0rd
+      - MYSQL_ENV_MYSQL_HOST=db
+    ports:
+      - "8200:80"
+
+  db:
+    image: mariadb:10.6
+    environment:
+      - MYSQL_ROOT_PASSWORD=p4ssw0rd
+    restart: unless-stopped
+    volumes:
+      - ./db_data:/var/lib/mysql
+
+
+
