@@ -3,13 +3,14 @@ version: '3.3'
 services:
 
   ipam:
-    image: pierrecdn/phpipam:latest
+    image: phpipam/phpipam-www:latest
     container_name: phpipam
     environment:
-      - MYSQL_ENV_MYSQL_USER=root
-      - MYSQL_ENV_MYSQL_ROOT_PASSWORD=p4ssw0rd
-      - MYSQL_ENV_MYSQL_HOST=db
-      - MYSQL_ENV_MYSQL_DB=phpipam      
+      - TZ=Europe/Madrid
+      - IPAM_DATABASE_HOST=db
+      - IPAM_DATABASE_USER=phpipam
+      - IPAM_DATABASE_PASS=p4ssw0rd
+      - IPAM_DATABASE_NAME=phpipam     
     restart: unless-stopped 
     depends_on:
       - db         
@@ -18,7 +19,7 @@ services:
 
   db:
     image: mariadb:10.6
-    container_name: db_phpipam
+    container_name: db-ipam
     environment:
       - MYSQL_ROOT_PASSWORD=p4ssw0rd
     restart: unless-stopped
