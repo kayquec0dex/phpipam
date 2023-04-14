@@ -5,17 +5,19 @@ services:
   ipam:
     image: pierrecdn/phpipam:latest
     container_name: phpipam
-    depends_on:
-      - db
     environment:
       - MYSQL_ENV_MYSQL_USER=root
       - MYSQL_ENV_MYSQL_ROOT_PASSWORD=p4ssw0rd
       - MYSQL_ENV_MYSQL_HOST=db
+    restart: unless-stopped 
+    depends_on:
+      - db         
     ports:
       - "8200:80"
 
   db:
-    image: mariadb:10.6    
+    image: mariadb:10.6
+    container_name: db_phpipam
     environment:
       - MYSQL_ROOT_PASSWORD=p4ssw0rd
     restart: unless-stopped
