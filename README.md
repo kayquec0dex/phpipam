@@ -14,7 +14,7 @@ MariaDB database name: phpipam
 
 Password: cualquiera 
 
-User name: admin
+User name: Admin
 
 Password: el anterior 
 
