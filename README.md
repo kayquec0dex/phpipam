@@ -3,7 +3,7 @@ phpIpam - - Docker compose
 
 Ver en "localhost:8200"
 
-MariaDB username: phpipam
+MariaDB username: root
 
 MariaDB password: p4ssw0rd
 
