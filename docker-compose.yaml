@@ -9,6 +9,7 @@ services:
       - MYSQL_ENV_MYSQL_USER=root
       - MYSQL_ENV_MYSQL_ROOT_PASSWORD=p4ssw0rd
       - MYSQL_ENV_MYSQL_HOST=db
+      - MYSQL_ENV_MYSQL_DB=phpipam      
     restart: unless-stopped 
     depends_on:
       - db         
