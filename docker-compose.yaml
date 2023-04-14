@@ -1,30 +1,32 @@
-version: '3.3'
+version: '3'
 
 services:
 
-  ipam:
+  phpipam:
+  
     image: phpipam/phpipam-www:latest
     container_name: phpipam
+    ports:
+      - "8200:80"
     environment:
       - TZ=Europe/Madrid
       - IPAM_DATABASE_HOST=db
-      - IPAM_DATABASE_USER=phpipam
+      - IPAM_DATABASE_USER=root      
       - IPAM_DATABASE_PASS=p4ssw0rd
-      - IPAM_DATABASE_NAME=phpipam     
-    restart: unless-stopped 
+      - IPAM_DATABASE_NAME=phpipam
+      - IPAM_DATABASE_WEBHOST=%
+    restart: unless-stopped
     depends_on:
-      - db         
-    ports:
-      - "8200:80"
+      - db
 
   db:
-    image: mariadb:10.6
+    image: mariadb:latest
     container_name: db-ipam
     environment:
       - MYSQL_ROOT_PASSWORD=p4ssw0rd
     restart: unless-stopped
     volumes:
-      - ./db_data:/var/lib/mysql
+      - ./phpipam-db-data:/var/lib/mysql
 
 
 
