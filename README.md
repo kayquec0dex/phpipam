@@ -12,7 +12,9 @@ MariaDB database: db
 MariaDB database name: phpipam
 
 
-Password: cualquiera 
+Password: cualquiera (8 carácteres mínimo)
+
+Repetir el Password: el mismo que antes
 
 User name: Admin
 
