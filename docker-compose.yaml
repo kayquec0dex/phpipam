@@ -20,7 +20,7 @@ services:
       - db
 
   db:
-    image: mariadb:latest
+    image: lscr.io/linuxserver/mariadb:latest 
     container_name: db-ipam
     environment:
       - MYSQL_ROOT_PASSWORD=p4ssw0rd
