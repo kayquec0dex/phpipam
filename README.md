@@ -1,24 +1,24 @@
-# phpipam
-phpIpam - - Docker compose
+# phpIPAM - Docker Compose
 
-Ver en "localhost:8200"
+## Descrição
+Este repositório contém a configuração necessária para implantar o phpIPAM utilizando Docker Compose.
 
-MariaDB username: root
+## Acesso
+O phpIPAM estará disponível no navegador em: [localhost:8200](http://localhost:8200)
 
-MariaDB password: p4ssw0rd
+## Configuração do MariaDB
+- **Usuário:** root
+- **Senha:** p4ssw0rd
+- **Nome do banco de dados:** phpipam
 
-MariaDB database: db
+## Configuração do phpIPAM
+Durante a instalação, utilize as seguintes informações:
 
-MariaDB database name: phpipam
+- **Senha:** Qualquer (mínimo de 8 caracteres)
+- **Repetir senha:** A mesma informada anteriormente
+- **Nome de usuário:** Admin
+- **Senha do Admin:** A mesma informada anteriormente
 
-
-Password: cualquiera (8 carácteres mínimo)
-
-Repetir el Password: el mismo que antes
-
-User name: Admin
-
-Password: el anterior 
 
 
 
